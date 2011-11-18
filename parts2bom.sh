@@ -2,7 +2,7 @@
 
 awk -F'	' '
 	BEGIN {
-		print "{\n	 \"items\: ["
+		print "{\n	 \"items\"\: ["
 		sep = ""
 	}
 	/^[^\.]/ {
@@ -10,7 +10,7 @@ awk -F'	' '
 		printf "		{\n"
 		printf "			\"designator\": \"%s\",\n", $1
 		printf "			\"value\": \"%s\",\n", $3
-		printf "			\"description\": \"%s (%s)\",\n", $2, $4
+		printf "			\"description\": \"%s (%s)\"\n", $2, $4
 		printf "		}"
 		sep = ",\n"
 	}
